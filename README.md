@@ -1,3 +1,3 @@
-# python mini projects
+# misc projects
 
-storage for any small projects made in python
+any miscellaneous projects i don't want to make a whole repository for
