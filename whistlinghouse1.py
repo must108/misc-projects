@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-response = requests.get('https://www.reddit.com/r/nosleep/comments/dyqd5e/something_walks_whistling_past_my_house_every/')
+response = requests.get(
+    'https://www.reddit.com/r/nosleep/comments/dyqd5e/something_walks_whistling_past_my_house_every/'
+)
 print(response.status_code)
 
 soup = BeautifulSoup(response.content, 'html.parser')
