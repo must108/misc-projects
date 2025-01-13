@@ -66,3 +66,30 @@ def preorder_iter(node):
 
 preorder_iter(A)
 print("\n")
+
+def levelorder(node):
+    q = [node]
+
+    while q:
+        a = q.pop(0)
+        print(a.val, end=" ")
+        if a.left: q.append(a.left)
+        if a.right: q.append(a.right)
+
+
+levelorder(A)
+print("\n")
+
+def search(node, val):
+    if not node:
+        print("Not found: ", val)
+        return False
+
+    if val == node.val:
+        print("Found: ", val)
+        return True
+
+    return search(node.left, val) or search(node.right, val)
+
+search(A, 2)
+search(A, 15)
