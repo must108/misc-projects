@@ -52,16 +52,36 @@ printAll(linked)
 
 class Double:
 
-    def __init__(self, val, next = None):
+    def __init__(self, val, next = None, prev = None):
         self.val = val
-        self.next = None
+        self.next = next
+        self.prev = prev
 
     def __str__(self, val):
         return str(self.val)
 
-def printDouble(node, val):
+print("Doubly Linked List")
+head = tail = Double(1)
+print(head.val, tail.val)
+
+def printDouble(node):
     temp = node
     while temp:
         print(temp.val)
         temp = temp.next
 
+def insertBeginning(head, tail, val):
+    new = Double(val, next=head)
+    head.prev = new
+    return new, tail
+
+def insertEnd(head, tail, val):
+    new = Double(val, prev=tail)
+    tail.next = new
+    return head, new
+
+print("After adding nodes")
+head, tail = insertBeginning(head, tail, 10)
+head, tail = insertBeginning(head, tail, 15)
+head, tail = insertEnd(head, tail, 25)
+printDouble(head)
